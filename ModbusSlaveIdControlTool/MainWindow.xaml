@@ -1,0 +1,19 @@
+﻿<Window x:Class="ModbusSlaveIdControlTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Modbus Slave ID Control Tool" Height="500" Width="600">
+    <Grid Margin="10">
+        <StackPanel>
+            <Button Content="📂 CSV Dosyası Seç" Click="BtnSelectCSV_Click" Height="35" Margin="0,5"/>
+            <Label x:Name="lblCsvPath" Content="CSV dosyası seçilmedi."/>
+
+            <Button Content="💾 Çıktı Dosyası Seç" Click="BtnSelectOutput_Click" Height="35" Margin="0,10"/>
+            <Label x:Name="lblOutputPath" Content="Çıktı dosyası seçilmedi."/>
+
+            <Button Content="✅ Kontrol Et" Click="BtnCheck_Click" Height="45" Background="LightGreen" Margin="0,10"/>
+
+            <TextBlock Text="İşlem Günlüğü:" FontWeight="Bold" Margin="0,10"/>
+            <ListBox x:Name="lstLog" Height="200"/>
+        </StackPanel>
+    </Grid>
+</Window>

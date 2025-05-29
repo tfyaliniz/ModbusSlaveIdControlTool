@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModbusSlaveIdControlTool", "ModbusSlaveIdControlTool\ModbusSlaveIdControlTool.csproj", "{0CE8D891-D3F5-471B-9C52-70A479A5BB5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CE8D891-D3F5-471B-9C52-70A479A5BB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE8D891-D3F5-471B-9C52-70A479A5BB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE8D891-D3F5-471B-9C52-70A479A5BB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE8D891-D3F5-471B-9C52-70A479A5BB5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87BA4E3B-461B-4475-9A2E-6A93EBBB857F}
+	EndGlobalSection
+EndGlobal
