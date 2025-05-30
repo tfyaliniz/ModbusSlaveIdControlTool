@@ -10,7 +10,7 @@
             <Button Content="💾 Çıktı Dosyası Seç" Click="BtnSelectOutput_Click" Height="35" Margin="0,10"/>
             <Label x:Name="lblOutputPath" Content="Çıktı dosyası seçilmedi."/>
 
-            <Button Content="✅ Kontrol Et" Click="BtnCheck_Click" Height="45" Background="LightGreen" Margin="0,10"/>
+            <Button x:Name="btnCheck" Content="✅ Kontrol Et" Click="BtnCheck_Click" Height="45" Background="LightGreen" Margin="0,10"/>
 
             <TextBlock Text="İşlem Günlüğü:" FontWeight="Bold" Margin="0,10"/>
             <ListBox x:Name="lstLog" Height="200"/>

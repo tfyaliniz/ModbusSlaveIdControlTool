@@ -1,64 +1,91 @@
-# Modbus Slave ID Control Tool
+# 🧪 Modbus Slave ID Control Tool
 
-## 📝 Açıklama
-Modbus Slave ID Control Tool, Modbus protokolü üzerinden çalışan cihazların slave ID'lerini kontrol etmek ve yönetmek için geliştirilmiş profesyonel bir araçtır. Bu araç, CSV dosyaları üzerinden toplu kontrol yapabilme ve sonuçları raporlama özelliklerine sahiptir.
+**Yapımcı:** Taha Furkan YALINIZ  
+📅 **Yıl:** 2025  
+📡 **Teknoloji:** C# (.NET 8) - WPF - NModbus - CsvHelper
 
-## ✨ Özellikler
-- CSV dosyası üzerinden toplu Modbus cihaz kontrolü
-- Holding Register ve Coil tipleri için destek
-- Otomatik slave ID tarama (1-11 arası)
-- Detaylı loglama sistemi
-- Sonuçların CSV formatında dışa aktarımı
-- Kullanıcı dostu arayüz
+---
 
-## 🚀 Kurulum
-1. Projeyi klonlayın:
-```bash
-git clone https://github.com/tfyaliniz/ModbusSlaveIdControlTool.git
+## 🎯 Proje Amacı
+
+Bu uygulama, Modbus TCP/IP iletişimi üzerinden birden fazla IP adresinde hangi **Slave ID** numarasının **hangi register adresi** ile başarılı şekilde iletişim kurduğunu otomatik olarak tespit eder.
+
+Karmaşık SCADA sistemlerinde cihaz ID eşlemesini manuel yapmak yerine, bu araç sayesinde:
+
+- Her IP’ye önceden belirlenen coil/holding register üzerinden bağlanılır
+- 1–11 arası Slave ID denenir
+- Başarı durumunda eşleşme CSV olarak kayıt edilir
+- Ping alınamayan cihazlar “PING YOK” olarak raporlanır
+
+---
+
+## 🧰 Özellikler
+
+✅ IP adresine **ping atar**, bağlantı varsa Modbus başlatır  
+✅ CSV’den **otomatik IP, register, tip** okur  
+✅ Her IP için **sadece 1 Holding ve 1 Coil** denemesi yapar  
+✅ **1’den 11’e kadar** Slave ID’leri test eder  
+✅ **Sonuçları CSV dosyasına** kaydeder  
+✅ WPF arayüzünde **log ekranı** ile süreci izletir  
+✅ **Uygulama donmaz**, işlemler arka planda yürür  
+
+---
+
+## 🖥️ Kullanım Adımları
+
+1. Uygulamayı çalıştırın (`ModbusSlaveIdControlTool.exe`)
+2. Giriş olarak bir `.csv` dosyası seçin  
+   Format şu şekilde olmalıdır:
+
+   ```csv
+   ip_address,register_address,register_type
+   172.17.114.53,40004,H
+   172.17.114.53,0,C
+   ```
+
+   | Alan           | Açıklama                       |
+   |----------------|--------------------------------|
+   | ip_address     | Cihaza ait IP adresi           |
+   | register_address | Denenecek adres (örn. 40001) |
+   | register_type  | `H` (Holding) veya `C` (Coil)  |
+
+3. Çıktı dosyasının kayıt edileceği yeri belirleyin
+4. “✅ Kontrol Et” butonuna tıklayın
+5. Log ekranı üzerinden süreci takip edin
+6. Sonuçlar belirtilen CSV dosyasına yazılır
+
+---
+
+## 📁 Örnek Çıktı Formatı
+
+```csv
+ip_address,register_type,register_address,slave_id
+172.17.114.53,H,40004,2
+172.17.114.53,C,0,1
+172.17.114.54,H,40004,PING YOK
 ```
 
-2. Visual Studio 2022 veya daha yeni bir sürüm ile projeyi açın.
+---
 
-3. Gerekli NuGet paketlerini yükleyin:
-```bash
-Install-Package NModbus
-Install-Package CsvHelper
-```
+## 🧩 Kullanılan Kütüphaneler
 
-4. Projeyi derleyin ve çalıştırın.
+- [NModbus4](https://www.nuget.org/packages/NModbus4)  
+- [CsvHelper](https://joshclose.github.io/CsvHelper/)  
+- .NET 8.0 WPF
 
-## 📋 Kullanım
-1. Programı başlatın
-2. "CSV Seç" butonu ile giriş CSV dosyasını seçin
-3. "Çıktı Seç" butonu ile sonuçların kaydedileceği dosyayı seçin
-4. "Kontrol Et" butonuna tıklayarak işlemi başlatın
+---
 
-### CSV Dosya Formatı
-Giriş CSV dosyası aşağıdaki sütunları içermelidir:
-- ip_address: Cihazın IP adresi
-- register_address: Register adresi
-- register_type: Register tipi (H: Holding Register, C: Coil)
+## 🧑‍💻 Geliştirici
 
-## 🤝 Katkıda Bulunma
-1. Bu depoyu fork edin
-2. Yeni bir branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'feat: Add some amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
+**Taha Furkan YALINIZ**  
+📍 Eskişehir, Türkiye  
+📆 2025  
 
-## 📄 Lisans
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+🔗 [GitHub](https://github.com/tfyaliniz)  
+🔗 [LinkedIn](https://www.linkedin.com/in/tfyaliniz/)
 
-## 👨‍💻 Geliştirici
-- **Taha Furkan YALINIZ**
-  - GitHub: [tfyaliniz](https://github.com/tfyaliniz)
-  - LinkedIn: [tfyaliniz](https://www.linkedin.com/in/tfyaliniz/)
+---
 
-## 📞 İletişim
-- GitHub: [tfyaliniz](https://github.com/tfyaliniz)
-- LinkedIn: [tfyaliniz](https://www.linkedin.com/in/tfyaliniz/)
+## 📝 Lisans
 
-## 🙏 Teşekkürler
-- NModbus kütüphanesi için
-- CsvHelper kütüphanesi için
-- Tüm katkıda bulunanlara 
+MIT License © 2025 — Taha Furkan YALINIZ
